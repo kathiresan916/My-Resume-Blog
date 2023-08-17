@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kathiresan Selvaraj's Resume Blog</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f0f0f0;
+            background-image: url('background-image.jpg');
+            background-size: cover;
+            background-repeat: no-repeat;
+        }
+        header {
+            background-color: rgba(0, 0, 0, 0.6);
+            color: #fff;
+            text-align: center;
+            padding: 1em 0;
+        }
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 2em;
+            background-color: rgba(255, 255, 255, 0.9);
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+        h1 {
+            margin: 0;
+        }
+        h2 {
+            color: #333;
+            margin-top: 1.5em;
+        }
+        ul {
+            list-style: disc;
+            margin-left: 1.5em;
+            margin-bottom: 1.5em;
+        }
+        p {
+            margin-bottom: 1.5em;
+        }
+
+        .social-links {
+            text-align: center; /* Center-align the social links */
+            margin-top: 1em;
+        }
+        .social-link {
+            margin: 0 10px; /* Add some spacing between the links */
+            color: #333;
+            text-decoration: none;
+            position: relative; /* Required for pseudo-elements */
+            display: inline-block;
+            transition: transform 0.3s ease, color 0.3s ease; /* Add transition effects */
+        }
+        .social-link::before {
+            content: "";
+            position: absolute;
+            width: 100%;
+            height: 2px;
+            bottom: 0;
+            left: 0;
+            background-color: #333;
+            transform: scaleX(0); /* Initially hidden */
+            transform-origin: right;
+            transition: transform 0.3s ease;
+        }
+        .social-link:hover {
+            transform: translateY(-3px) scale(1.1); /* Apply scaling and translation on hover */
+            color: #ff6600; /* Change color on hover */
+        }
+        .social-link:hover::before {
+            transform: scaleX(1); /* Reveal the underline on hover */
+            transform-origin: left;
+        }
+        .interests-achievements {
+        background-color: rgba(255, 255, 255, 0.95);
+        border-radius: 10px;
+        padding: 2em;
+        margin-top: 2em;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        overflow: hidden;
+    }
+    .interests-achievements h2 {
+        color: #333;
+        margin-top: 0;
+    }
+    .interests-achievements ul {
+        list-style: none;
+        padding-left: 0;
+    }
+    .interests-achievements li {
+        position: relative;
+        padding-left: 25px;
+        margin-bottom: 15px;
+        line-height: 1.4;
+    }
+    .interests-achievements li::before {
+        content: "▹";
+        position: absolute;
+        left: 0;
+        color: #ff6600;
+        font-size: 1.5em;
+        line-height: 1;
+    }
+    .interests-achievements .highlight {
+        color: #ff6600;
+        font-weight: bold;
+    }
+
+    /* Add animations */
+    @keyframes fadeIn {
+        from {
+            opacity: 0;
+            transform: translateY(20px);
+        }
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+    .interests-achievements li {
+        animation: fadeIn 0.5s ease-in-out forwards;
+    }
+    .education-skills {
+            margin-top: 2em;
+            background-color: rgba(255, 255, 255, 0.95);
+            border-radius: 10px;
+            padding: 2em;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        .education-skills h2 {
+            color: #333;
+            margin-top: 0;
+            font-size: 1.5em;
+        }
+        .education-skills p {
+            font-size: 1.1em;
+            line-height: 1.6;
+            color: #555;
+        }
+        .skills-list {
+            list-style: none;
+            padding-left: 0;
+            margin-top: 1.5em;
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            justify-content: center;
+        }
+        .skills-list li {
+            margin: 0 10px 10px 0;
+            padding: 8px 18px;
+            background-color: #ff6600;
+            color: #fff;
+            border-radius: 30px;
+            font-weight: bold;
+            font-size: 0.9em;
+            transition: transform 0.3s ease;
+            cursor: pointer;
+        }
+        .skills-list li:hover {
+            transform: scale(1.05);
+        }
+
+        .section {
+            margin-top: 2em;
+            background-color: rgba(255, 255, 255, 0.95);
+            border-radius: 10px;
+            padding: 2em;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        .section h2 {
+            color: #333;
+            margin-top: 0;
+            font-size: 1.5em;
+        }
+        .section p {
+            font-size: 1.1em;
+            line-height: 1.6;
+            color: #555;
+        }
+        .section ul {
+            list-style: none;
+            padding-left: 0;
+            margin-top: 1em;
+        }
+        .section ul li {
+            position: relative;
+            padding-left: 1.5em;
+            margin-bottom: 10px;
+            line-height: 1.4;
+        }
+        .section ul li::before {
+            content: "▹";
+            position: absolute;
+            left: 0;
+            color: #ff6600;
+            font-size: 1.2em;
+            line-height: 1;
+        }
+        .professional-summary {
+            padding: 2em;
+        }
+        .professional-summary h2 {
+            color: #ff6600;
+            font-size: 1.5em;
+            margin-bottom: 1em;
+        }
+        .professional-summary p {
+            font-size: 1.1em;
+            line-height: 1.6;
+            color: #555;
+        }
+        .professional-summary a {
+            color: #ff6600;
+            font-weight: bold;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+        .professional-summary a:hover {
+            color: #d45500;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Welcome to Kathiresan Selvaraj's Resume Blog</h1>
+    </header>
+    <div class="social-links">
+        <a href="https://twitter.com/Kathiresan_916" class="social-link" target="_blank">Twitter</a>
+        <a href="https://www.facebook.com/kathiresan916/" class="social-link" target="_blank">Facebook</a>
+        <a href="https://www.linkedin.com/in/kathiresan-selvaraj916/" class="social-link" target="_blank">LinkedIn</a>
+        <a href="https://www.instagram.com/your_username" class="social-link" target="_blank">Instagram</a>
+        <a href="https://www.naukri.com/mnjuser/profile?id=&altresid" class="social-link" taget="blank">Naukri</a>
+      </div>
+      <div class="container">
+        <!-- Professional Summary -->
+        <div class="container">
+            <!-- Professional Summary -->
+            <div class="section">
+                <div class="professional-summary">
+                    <h2>Professional Summary</h2>
+                    <p>Hello! I'm a dynamic professional with a successful track record in the banking domain. I'm excited to transition into the dynamic world of DevOps and contribute my technical acumen and collaboration skills to cutting-edge projects. You can reach me via email at <a href="mailto:kathiresan_s916@yahoo.com">kathiresan_s916@yahoo.com</a> or connect with me on <a href="https://www.linkedin.com/in/kathiresan-selvaraj916/" target="_blank">LinkedIn</a>.</p>
+                </div>
+            </div>
+        
+        <div class="section">
+            <h2>Professional Experience</h2>
+            <div class="job-entry">
+                <h3>Banking Process Analyst | Accenture Pvt Ltd, Chennai | June 2021 - Present*</h3>
+                <ul>
+                    <li>Spearheaded end-to-end management of loan renewals and banking mortgage processes, overseeing accurate and compliant execution.</li>
+                    <li>Collaborated seamlessly with multifunctional teams including loan officers, underwriters, legal experts, IT professionals to ensure smooth workflow and consistent communication.</li>
+                    <li>Developed a comprehensive repository of process documentation, streamlining knowledge sharing and enabling seamless onboarding of new team members.</li>
+                    <li>Generated daily production count reports and conducted detailed analysis, offering key insights into process performance, and identifying opportunities for further optimization.</li>
+                    <li>Contributed to monthly reports summarizing key process metrics.</li>
+                    <li>Provided essential support in managing high volume workloads, efficiently clearing tasks within cut-off timelines to ensure operational efficiency.</li>
+                    <li>Consistently met and exceeded daily production targets, showcasing a commitment to quality and efficiency in task completion.</li>
+                </ul>
+            </div>
+            <div class="job-entry">
+                <h3>Transaction Processing Associate | Accenture Pvt Ltd, Chennai | November 2016 – April 2021</h3>
+                <ul>
+                    <li>Facilitated claims adjudication process, reviewing, and evaluating claims to determine coverage and validity.</li>
+                    <li>Coordinated end-to-end processing of claims, from initial submission to final resolution, ensuring accuracy and timely resolution.</li>
+                    <li>Generated comprehensive reports and data visualizations for key stakeholders, providing insights into claims trends and performance metrics.</li>
+                    <li>Collaborated closely with cross-functional teams, including claims specialists, legal advisors, and IT professionals, to address complex cases and optimize adjudication processes.</li>
+                    <li>Leveraged analytical skills to identify discrepancies and anomalies, leading to the implementation of proactive measures to mitigate risks and fraud.</li>
+                    <li>Provided exceptional support in managing a high volume of claims, maintaining a commitment to efficiency, accuracy, and customer satisfaction.</li>
+                </ul>
+            </div>
+        </div>
+        
+        <div class="education-skills">
+            <h2>Education and Skills</h2>
+            <p>I hold a Bachelor of Computer Applications (BCA) from Madras University, and I am skilled in DevOps tools such as Git, Jenkins, Docker, Ansible, and Puppet. My expertise extends to programming languages like Python, and I have a strong background in process optimization and team collaboration.</p>
+            <ul class="skills-list">
+                <li>Git</li>
+                <li>Jenkins</li>
+                <li>Docker</li>
+                <li>Ansible</li>
+                <li>Puppet</li>
+                <li>Python</li>
+            </ul>
+        </div>
+
+        <div class="interests-achievements">
+            <h2>Interests and Achievements</h2>
+            <ul>
+                <li>I enjoy exploring new <span class="highlight">DevOps technologies</span>, contributing to open-source projects, coding for automation, and staying updated on emerging software development trends.</li>
+                <li>I am proud to have received the "<span class="highlight">Star of Business and Core Value Champion</span>" recognition multiple times for my contributions.</li>
+            </ul>
+        </div>
+    </div>
+</body>
+</html>
